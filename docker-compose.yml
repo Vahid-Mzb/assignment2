@@ -1,0 +1,16 @@
+services:
+  kvstore:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: kvstore:optimized
+    container_name: kvstore
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/data
+    environment:
+      - DATA_PATH=/data/store.json 
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
