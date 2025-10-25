@@ -34,6 +34,47 @@ The server will start on `http://localhost:8080`
 
 ### Option 2: Run with Docker
 
+### Installing Docker on Linux
+
+To **download and install Docker**, run the following command in your terminal:
+
+```bash
+curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
+```
+
+---
+### Using a VPN or Mirror for Docker Images
+
+To **download Docker images**, you either need a **VPN** or you can use a **mirror**, such as the **AbrArvan mirror**.
+
+To configure Docker to use the AbrArvan mirror, run this command in your terminal:
+
+```bash
+sudo bash -c 'cat > /etc/docker/daemon.json <<EOF
+{
+  "insecure-registries": ["https://docker.arvancloud.ir"],
+  "registry-mirrors": ["https://docker.arvancloud.ir"]
+}
+EOF'
+```
+
+---
+
+### Applying the Changes
+
+After updating the configuration, run the following commands to apply the changes:
+
+```bash
+docker logout
+sudo systemctl restart docker
+```
+
+---
+
+ Docker should now be configured and ready to pull images using the AbrArvan mirror.
+ 
+ ### Now let's run the code using Docker:
+ 
 1. Build and run using Docker Compose:
 ```bash
 docker compose up --build
