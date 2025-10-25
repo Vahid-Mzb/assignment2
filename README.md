@@ -95,7 +95,7 @@ curl -i http://localhost:8080/objects/user:1234
 ```
 
 **Response (if key exists):**
-```json
+```
 HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Sat, 25 Oct 2025 10:44:23 GMT
