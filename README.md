@@ -33,7 +33,7 @@ go run main.go
 The server will start on `http://localhost:8080`
 
 ### Option 2: Run with Docker
-
+---
 ### Installing Docker on Linux
 
 To **download and install Docker**, run the following command in your terminal:
