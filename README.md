@@ -2,6 +2,15 @@
 
 A simple persistent key-value store with HTTP REST API endpoints, implemented in Go.
 
+##  Table of Contents
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation & Setup](#installation--setup)
+  - [Option 1: Run Locally](#option-1-run-locally)
+  - [Option 2: Run with Docker](#option-2-run-with-docker)
+- [Error Handling](#error-handling)
+- [Usage Examples](#usage-examples)
+
 ## Features
 
 - **PUT /objects** - Store key-value pairs
