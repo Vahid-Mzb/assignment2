@@ -12,10 +12,16 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build \
     -a -installsuffix cgo \
     -o kvstore .
 
-FROM scratch
+
+FROM alpine:latest
+
+RUN adduser -D -u 1000 appuser
+
+RUN mkdir -p /data && chown -R appuser:appuser /data
 
 COPY --from=builder /app/kvstore /kvstore
 
+USER appuser
 
 EXPOSE 8080
 
