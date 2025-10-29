@@ -10,7 +10,14 @@ services:
     volumes:
       - ./data:/data
     environment:
-      - DATA_PATH=/data/store.json 
+      - DATA_PATH=/data/store.json
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        chmod 777 /data 2>/dev/null || true
+        chmod 666 /data/store.json 2>/dev/null || true
+        umask 0000
+        /app/kvstore
